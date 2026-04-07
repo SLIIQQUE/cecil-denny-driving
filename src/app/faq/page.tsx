@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { CTASection } from "@/components/sections/CTASection";
 import { CardContent } from "@/components/ui/card";
 import { FAQ_DATA } from "@/data/testimonials";
-import { HelpCircle, Phone } from "lucide-react";
+import { HelpCircle, Phone, Calendar } from "lucide-react";
 import { heroText, staggerContainer, fadeUp } from "@/lib/animations";
 import { ButtonLink } from "@/components/ui/button-link";
 
@@ -88,16 +88,19 @@ export default function FAQPage() {
                 Still have questions?
               </h3>
               <p className="text-white/50 mb-6">
-                Can&apos;t find the answer you&apos;re looking for? Give us a call and 
+                Can&apos;t find the answer you&apos;re looking for? Chat with our AI assistant and 
                 we&apos;ll be happy to help.
               </p>
-              <ButtonLink
-                href={`tel:${"02087435687"}`}
-                className="rounded-full bg-red-500 text-white hover:bg-red-400 glow-red font-semibold h-12 px-8"
+              <button
+                onClick={() => {
+                  const btn = document.querySelector('[aria-label="Open AI voice assistant"]');
+                  if (btn instanceof HTMLElement) btn.click();
+                }}
+                className="rounded-full bg-red-500 text-white hover:bg-red-400 glow-red font-semibold h-12 px-8 inline-flex items-center gap-2"
               >
-                <Phone className="w-4 h-4 mr-2" />
-                Call Us Now
-              </ButtonLink>
+                <Calendar className="w-4 h-4" />
+                Ask AI Assistant
+              </button>
             </motion.div>
           </div>
         </section>

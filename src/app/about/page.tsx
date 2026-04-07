@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import { CTASection } from "@/components/sections/CTASection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Phone, Mail, Star, Award, Users, ThumbsUp, ArrowRight } from "lucide-react";
+import { Phone, Mail, Star, Award, Users, ThumbsUp, ArrowRight, Calendar } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 import { heroText, staggerContainer, fadeUp } from "@/lib/animations";
 
@@ -58,13 +58,16 @@ export default function AboutPage() {
                 </motion.p>
 
                 <motion.div variants={staggerContainer} className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href={`tel:${BUSINESS.phone.replace(/\s/g, "")}`}
+                  <button
+                    onClick={() => {
+                      const btn = document.querySelector('[aria-label="Open AI voice assistant"]');
+                      if (btn instanceof HTMLElement) btn.click();
+                    }}
                     className="inline-flex items-center gap-2 text-red-400 font-semibold hover:text-red-300 transition-colors"
                   >
-                    <Phone className="w-4 h-4" />
-                    {BUSINESS.phone}
-                  </a>
+                    <Calendar className="w-4 h-4" />
+                    Book via AI Assistant
+                  </button>
                   <a
                     href={`mailto:${BUSINESS.email}`}
                     className="inline-flex items-center gap-2 text-white/40 font-medium hover:text-white/70 transition-colors"

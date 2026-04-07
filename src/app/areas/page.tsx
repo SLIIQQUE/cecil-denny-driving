@@ -8,7 +8,7 @@ import { CTASection } from "@/components/sections/CTASection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AREAS_SERVED } from "@/data/business";
-import { MapPin, Phone, Navigation, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Navigation, ArrowRight, Calendar } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { BUSINESS } from "@/data/business";
 import { heroText, staggerContainer, fadeUp } from "@/lib/animations";
@@ -102,17 +102,20 @@ export default function AreasPage() {
                       Not Sure If We Cover Your Area?
                     </h2>
                     <p className="text-white/50 mb-8 leading-relaxed">
-                      Give us a call and we&apos;ll let you know if we can come to 
+                      Chat with our AI assistant and we&apos;ll let you know if we can come to 
                       you. We cover most of West London and are always expanding 
                       our coverage area.
                     </p>
-                    <ButtonLink
-                      href={`tel:${BUSINESS.phone.replace(/\s/g, "")}`}
-                      className="rounded-full bg-red-500 text-white hover:bg-red-400 glow-red font-semibold h-12 px-8"
+                    <button
+                      onClick={() => {
+                        const btn = document.querySelector('[aria-label="Open AI voice assistant"]');
+                        if (btn instanceof HTMLElement) btn.click();
+                      }}
+                      className="rounded-full bg-red-500 text-white hover:bg-red-400 glow-red font-semibold h-12 px-8 inline-flex items-center gap-2"
                     >
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call Us
-                    </ButtonLink>
+                      <Calendar className="w-4 h-4" />
+                      Ask AI Assistant
+                    </button>
                   </div>
                   <div className="relative">
                     <div

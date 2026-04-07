@@ -86,8 +86,6 @@ export default function TermsPage() {
             </p>
             <p className="text-muted-foreground">
               <strong>Email:</strong> {BUSINESS.email}
-              <br />
-              <strong>Phone:</strong> {BUSINESS.phone}
             </p>
           </div>
         </div>

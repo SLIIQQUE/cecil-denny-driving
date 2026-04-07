@@ -78,8 +78,6 @@ export default function PrivacyPage() {
             <p className="text-muted-foreground">
               <strong>Email:</strong> {BUSINESS.email}
               <br />
-              <strong>Phone:</strong> {BUSINESS.phone}
-              <br />
               <strong>Address:</strong> {BUSINESS.address.street},{" "}
               {BUSINESS.address.city} {BUSINESS.address.postcode}
             </p>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { BUSINESS } from "@/data/business";
 import { staggerContainer, fadeUp } from "@/lib/animations";
-import { Mail, MapPin, Star, Calendar, Phone } from "lucide-react";
+import { Mail, MapPin, Star, Calendar } from "lucide-react";
 
 export function CTASection() {
   const scrollToAssistant = () => {
@@ -126,22 +126,23 @@ export function CTASection() {
                 variants={fadeUp}
                 className="glass-card rounded-2xl p-6 space-y-5"
               >
-                <a
-                  href={`tel:${BUSINESS.phone}`}
-                  className="flex items-center gap-4 group"
+                {/* AI Assistant push instead of phone */}
+                <button
+                  onClick={scrollToAssistant}
+                  className="flex items-center gap-4 group w-full text-left"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-red-500/10 group-hover:border-red-500/20 transition-colors">
-                    <Phone className="w-5 h-5 text-red-400" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <Calendar className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-[11px] text-white/40 uppercase tracking-wider mb-0.5">
-                      Call Us
+                      Book via AI
                     </p>
                     <p className="font-semibold text-white group-hover:text-red-400 transition-colors">
-                      {BUSINESS.phone}
+                      Get instant availability
                     </p>
                   </div>
-                </a>
+                </button>
 
                 <a
                   href={`mailto:${BUSINESS.email}`}
