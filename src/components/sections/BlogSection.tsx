@@ -16,7 +16,7 @@ export function BlogSection() {
     <section className="py-24 lg:py-32 relative overflow-hidden">
       {/* Section Number Background */}
       <div className="absolute top-0 right-8 section-number select-none pointer-events-none">
-        04
+        03
       </div>
 
       {/* Ambient glow */}
