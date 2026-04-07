@@ -143,16 +143,16 @@ export function Footer() {
           <p className="text-sm text-white/30">
             © {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <Link
               href="/privacy"
-              className="text-sm text-white/30 hover:text-red-400 transition-colors"
+              className="text-xs text-white/30 hover:text-red-400 transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-sm text-white/30 hover:text-red-400 transition-colors"
+              className="text-xs text-white/30 hover:text-red-400 transition-colors"
             >
               Terms of Service
             </Link>
@@ -160,9 +160,10 @@ export function Footer() {
               href="https://sliiqque.space"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-white/30 hover:text-red-400 transition-colors"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-red-500/30 transition-all group"
             >
-              Built by SLIIQQUE
+              <span className="text-xs text-white/50 group-hover:text-white/70 transition-colors">Built by</span>
+              <span className="text-xs font-semibold text-white group-hover:text-red-400 transition-colors">SLIIQQUE</span>
             </a>
           </div>
         </div>
