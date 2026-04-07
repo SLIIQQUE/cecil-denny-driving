@@ -51,6 +51,9 @@ export function useVoiceAssistant(): UseVoiceAssistantReturn {
     if (!synthRef.current) return;
 
     synthRef.current.cancel();
+    
+    setIsSpeaking(true);
+    
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "en-GB";
     utterance.rate = 0.95;
@@ -61,6 +64,10 @@ export function useVoiceAssistant(): UseVoiceAssistantReturn {
     utterance.onerror = () => setIsSpeaking(false);
 
     synthRef.current.speak(utterance);
+
+    setTimeout(() => {
+      setIsSpeaking(false);
+    }, 100);
   }, []);
 
   const handleUserMessage = useCallback(async (content: string) => {
