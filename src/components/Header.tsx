@@ -55,14 +55,14 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3.5 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-lg shadow-red-500/30 group-hover:shadow-xl group-hover:shadow-red-500/40 transition-shadow">
-              <Sparkles className="w-5 h-5 text-white" />
+              <span className="font-display font-bold text-white text-lg">CD</span>
             </div>
             <div className="hidden sm:block">
               <p className="font-display font-semibold text-white text-sm leading-tight group-hover:text-red-300 transition-colors">
                 Cecil Denny
               </p>
               <p className="text-[11px] text-white/40">
-                AI-Powered Driving School
+                Driving School
               </p>
             </div>
           </Link>
@@ -117,14 +117,14 @@ export function Header() {
                   <div className="flex items-center justify-between px-6 py-5 border-b border-white/8">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
-                        <Sparkles className="w-5 h-5 text-white" />
+                        <span className="font-display font-bold text-white text-lg">CD</span>
                       </div>
                       <div>
                         <p className="font-display font-semibold text-white text-sm">
                           Cecil Denny
                         </p>
                         <p className="text-[11px] text-white/40">
-                          AI-Powered Driving School
+                          Driving School
                         </p>
                       </div>
                     </div>
@@ -140,7 +140,7 @@ export function Header() {
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
-                        <Sparkles className="w-5 h-5 text-white" />
+                        <span className="font-display font-bold text-white text-lg">CD</span>
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-white">

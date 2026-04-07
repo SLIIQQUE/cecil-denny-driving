@@ -24,11 +24,11 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3.5 mb-6 group">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-lg shadow-red-500/25">
-                <Sparkles className="w-6 h-6 text-white" />
+                <span className="font-display font-bold text-white text-xl">CD</span>
               </div>
               <div>
                 <p className="font-display font-semibold leading-tight text-white">Cecil Denny</p>
-                <p className="text-sm text-white/40">AI-Powered Driving School</p>
+                <p className="text-sm text-white/40">Driving School</p>
               </div>
             </Link>
 
