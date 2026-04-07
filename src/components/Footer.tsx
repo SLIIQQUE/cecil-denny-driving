@@ -143,7 +143,7 @@ export function Footer() {
           <p className="text-sm text-white/30">
             © {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <Link
               href="/privacy"
               className="text-sm text-white/30 hover:text-red-400 transition-colors"
@@ -156,6 +156,14 @@ export function Footer() {
             >
               Terms of Service
             </Link>
+            <a
+              href="https://sliiqque.space"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/30 hover:text-red-400 transition-colors"
+            >
+              Built by SLIIQQUE
+            </a>
           </div>
         </div>
       </div>
