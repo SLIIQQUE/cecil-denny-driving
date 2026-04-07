@@ -63,6 +63,7 @@ export default function AboutPage() {
                       const btn = document.querySelector('[aria-label="Open AI voice assistant"]');
                       if (btn instanceof HTMLElement) btn.click();
                     }}
+                    aria-label="Book via AI Assistant"
                     className="inline-flex items-center gap-2 text-red-400 font-semibold hover:text-red-300 transition-colors"
                   >
                     <Calendar className="w-4 h-4" />

@@ -144,6 +144,7 @@ export function HeroSection() {
           >
             <button
               onClick={scrollToAssistant}
+              aria-label="Book a driving lesson"
               className="inline-flex items-center justify-center h-14 px-8 text-[15px] font-semibold rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-400 hover:to-red-500 glow-red shadow-2xl shadow-red-500/20 transition-all"
             >
               <Calendar className="w-5 h-5 mr-3" />
@@ -151,6 +152,7 @@ export function HeroSection() {
             </button>
             <button
               onClick={scrollToAssistant}
+              aria-label="Ask questions about driving lessons"
               className="inline-flex items-center justify-center h-14 px-8 text-[15px] font-semibold rounded-full bg-white/5 border border-white/20 text-white hover:bg-white/10 transition-all"
             >
               Ask Questions

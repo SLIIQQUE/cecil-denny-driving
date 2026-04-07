@@ -96,6 +96,7 @@ export default function FAQPage() {
                   const btn = document.querySelector('[aria-label="Open AI voice assistant"]');
                   if (btn instanceof HTMLElement) btn.click();
                 }}
+                aria-label="Ask AI Assistant for help"
                 className="rounded-full bg-red-500 text-white hover:bg-red-400 glow-red font-semibold h-12 px-8 inline-flex items-center gap-2"
               >
                 <Calendar className="w-4 h-4" />

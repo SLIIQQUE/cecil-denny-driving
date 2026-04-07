@@ -114,6 +114,7 @@ export function CTASection() {
               <motion.div variants={fadeUp}>
                 <button
                   onClick={scrollToAssistant}
+                  aria-label="Book your first driving lesson"
                   className="w-full h-16 rounded-2xl bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-400 hover:to-red-500 glow-red text-lg font-bold shadow-2xl shadow-red-500/15 flex items-center justify-center gap-3 transition-all"
                 >
                   <Calendar className="w-6 h-6" />
@@ -129,6 +130,7 @@ export function CTASection() {
                 {/* AI Assistant push instead of phone */}
                 <button
                   onClick={scrollToAssistant}
+                  aria-label="Get instant availability"
                   className="flex items-center gap-4 group w-full text-left"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center group-hover:scale-105 transition-transform">

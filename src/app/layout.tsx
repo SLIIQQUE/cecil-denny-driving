@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "driving lessons Shepherd's Bush",
   ],
   authors: [{ name: "Cecil Denny" }],
-  creator: "Cecil Denny Driving School",
+  creator: "SLIIQQUE",
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -51,6 +51,15 @@ export const metadata: Metadata = {
     title: "Cecil Denny Driving School | Expert Driving Lessons in London W3",
     description:
       "Professional driving lessons in London W3. Manual transmission. 5-star rated instructor with 20+ years experience.",
+    url: "https://cecildennydriving.co.uk",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80",
+        width: 1200,
+        height: 630,
+        alt: "Cecil Denny Driving School - Expert driving lessons in London W3",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
