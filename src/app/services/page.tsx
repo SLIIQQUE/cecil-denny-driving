@@ -78,8 +78,8 @@ export default function ServicesPage() {
                     <div className="relative h-56 overflow-hidden">
                       <Image
                         src={service.id === "lessons"
-                          ? "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-                          : "https://images.unsplash.com/photo-1493238792000-8113da705763?w=800&q=80"
+                          ? "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800&q=80"
+                          : "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80"
                         }
                         alt={service.title}
                         fill

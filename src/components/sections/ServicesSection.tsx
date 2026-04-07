@@ -3,9 +3,27 @@
 import { motion } from "motion/react";
 import { PACKAGES } from "@/data/services";
 import { fadeUp, staggerContainer } from "@/lib/animations";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Car, Clock, Shield } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Badge } from "@/components/ui/badge";
+
+const PACKAGE_FEATURES = [
+  [
+    { icon: Clock, text: "90-minute sessions" },
+    { icon: Shield, text: "DVSA-qualified instructor" },
+    { icon: Car, text: "Manual or automatic" },
+  ],
+  [
+    { icon: Clock, text: "90-minute sessions" },
+    { icon: Shield, text: "DVSA-qualified instructor" },
+    { icon: Car, text: "Manual or automatic" },
+  ],
+  [
+    { icon: Clock, text: "90-minute sessions" },
+    { icon: Shield, text: "DVSA-qualified instructor" },
+    { icon: Car, text: "Manual or automatic" },
+  ],
+];
 
 export function ServicesSection() {
   return (
@@ -34,19 +52,18 @@ export function ServicesSection() {
           <div className="flex items-center gap-4 mb-6">
             <div className="line-accent" />
             <span className="text-[11px] uppercase tracking-[0.3em] text-white/40 font-mono">
-              What We Offer
+              Lesson Packages
             </span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
               <h2 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight mb-4">
-                Choose Your
+                Your Path to
                 <br />
-                <span className="text-gradient-red">Package.</span>
+                <span className="text-gradient-red">Passing First Time.</span>
               </h2>
               <p className="text-white/50 text-base max-w-md leading-relaxed">
-                From first-time learners to those needing a confidence boost — 
-                we have a structured path for everyone.
+                Structured lessons covering everything you need — from basic controls to test-ready skills.
               </p>
             </div>
             <ButtonLink
@@ -54,7 +71,7 @@ export function ServicesSection() {
               size="lg"
               className="rounded-full border border-white/15 text-white hover:bg-white/5 hover:border-white/25 self-start"
             >
-              All Courses
+              View All Services
               <ArrowRight className="w-4 h-4 ml-2" />
             </ButtonLink>
           </div>
@@ -108,6 +125,14 @@ export function ServicesSection() {
                   </li>
                 ))}
               </ul>
+              <div className="space-y-3 mb-8">
+                {PACKAGE_FEATURES[index].map((feat, idx) => (
+                  <div key={idx} className="flex items-center gap-3 text-xs text-white/50">
+                    <feat.icon className="w-4 h-4 text-white/30" />
+                    {feat.text}
+                  </div>
+                ))}
+              </div>
               <ButtonLink
                 href="/contact"
                 variant={pkg.popular ? "default" : "outline"}
@@ -115,7 +140,7 @@ export function ServicesSection() {
                   pkg.popular ? "bg-red-500 hover:bg-red-400 text-white" : "border-white/15 text-white hover:bg-white/5 hover:border-white/25"
                 }`}
               >
-                Get Started
+                Book This Package
               </ButtonLink>
             </motion.div>
           ))}

@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { useRef } from "react";
 import Image from "next/image";
-import { Star, Sparkles } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { BUSINESS } from "@/data/business";
 
 export function HeroSection() {
@@ -38,8 +38,8 @@ export function HeroSection() {
         className="absolute inset-0 will-change-transform"
       >
         <Image
-          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=2560&q=90"
-          alt="Open road at sunset"
+          src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=2560&q=90"
+          alt="Driver on the road ahead"
           fill
           priority
           className="object-cover"
@@ -97,24 +97,24 @@ export function HeroSection() {
           <div className="flex items-center gap-4">
             <div className="line-accent" />
             <span className="text-[11px] uppercase tracking-[0.3em] text-white/40 font-mono">
-              AI-Powered · London W3
+              West London · W3
             </span>
           </div>
         </div>
 
         {/* Main headline */}
-        <div className="max-w-4xl pb-40 lg:pb-48">
+        <div className="max-w-4xl pb-32 lg:pb-36">
           <motion.h1
             initial={{ opacity: 0, y: 60, filter: "blur(16px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-[clamp(3rem,8vw,7rem)] font-bold leading-[0.9] tracking-tight text-white mb-6"
           >
-            Ask Our AI
+            Learn to Drive
             <br />
-            <span className="text-gradient-red">Get Answers</span>
+            <span className="text-gradient-red">With Purpose.</span>
             <br />
-            Instantly.
+            Book Instantly.
           </motion.h1>
 
           <motion.p
@@ -127,9 +127,8 @@ export function HeroSection() {
             }}
             className="text-[17px] text-white/50 max-w-xl leading-relaxed mb-10"
           >
-            West London&apos;s first AI-powered driving school. Get instant
-            answers about lessons, pricing, and booking — available 24/7. Our AI
-            assistant is here to help you start your journey.
+            Professional driving lessons in West London. Book directly through our AI assistant — 
+            available 24/7 to answer questions and schedule your first lesson.
           </motion.p>
 
           {/* CTAs */}
@@ -147,48 +146,17 @@ export function HeroSection() {
               onClick={scrollToAssistant}
               className="inline-flex items-center justify-center h-14 px-8 text-[15px] font-semibold rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-400 hover:to-red-500 glow-red shadow-2xl shadow-red-500/20 transition-all"
             >
-              <Sparkles className="w-5 h-5 mr-3" />
-              Chat with AI Now
+              <Calendar className="w-5 h-5 mr-3" />
+              Book a Lesson
             </button>
             <button
               onClick={scrollToAssistant}
               className="inline-flex items-center justify-center h-14 px-8 text-[15px] font-semibold rounded-full bg-white/5 border border-white/20 text-white hover:bg-white/10 transition-all"
             >
-              How It Works
+              Ask Questions
             </button>
           </motion.div>
         </div>
-
-        {/* ─── Stats Bar ─── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute bottom-12 left-6 right-6 lg:left-8 lg:right-8"
-        >
-          <div className="glass-card rounded-2xl p-6 flex flex-wrap items-center justify-between gap-6">
-            {[
-              { label: "AI Response Time", value: "< 30s" },
-              { label: "Availability", value: "24/7" },
-              { label: "Happy Learners", value: "500+" },
-              { label: "Areas Covered", value: "10+" },
-            ].map((stat) => (
-              <div key={stat.label} className="flex items-center gap-4">
-                <div>
-                  <p className="text-2xl font-display font-bold text-white">
-                    {stat.value}
-                  </p>
-                  <p className="text-[11px] text-white/40 uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-                </div>
-                {stat.label !== "Areas Covered" && (
-                  <div className="w-px h-10 bg-white/10 hidden sm:block" />
-                )}
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </motion.div>
 
       {/* ─── Scroll indicator ─── */}

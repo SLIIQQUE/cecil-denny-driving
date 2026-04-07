@@ -95,8 +95,6 @@
   }
 }
 
-/* ─── Grand Prix Design Utilities ─── */
-
 @layer utilities {
   /* Noise Texture */
   .noise {
@@ -161,25 +159,36 @@
     pointer-events: none;
   }
 
-  /* Marquee */
-  .marquee {
-    display: flex;
-    overflow: hidden;
-    user-select: none;
-  }
-  .marquee-content {
-    display: flex;
-    gap: 2rem;
-    animation: marquee 30s linear infinite;
-  }
-  .marquee-content:hover {
-    animation-play-state: paused;
-  }
+/* Marquee Animation */
+.animate-marquee {
+  display: flex;
+  animation: marquee-scroll 40s linear infinite;
+  width: max-content;
+}
 
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+.animate-marquee-reverse {
+  display: flex;
+  animation: marquee-scroll-reverse 40s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(-66.666%);
+  }
+}
+
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translateX(-66.666%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
   /* Red line accent */
   .line-accent {

@@ -84,8 +84,8 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-square rounded-3xl overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=85"
-                    alt="Driving instructor"
+                    src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=85"
+                    alt="Cecil Denny - Driving Instructor"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -126,8 +126,8 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { icon: Users, value: "500+", label: "Learners Passed" },
-                { icon: Award, value: "95%", label: "Pass Rate" },
+                { icon: Users, value: "50+", label: "Verified Reviews" },
+                { icon: Award, value: "DVSA", label: "Qualified" },
                 { icon: Star, value: "5.0", label: "Average Rating" },
                 { icon: ThumbsUp, value: "20+", label: "Years Experience" },
               ].map((stat, index) => (

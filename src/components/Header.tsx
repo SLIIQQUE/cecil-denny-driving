@@ -86,13 +86,13 @@ export function Header() {
 
           {/* CTA & Mobile Menu */}
           <div className="flex items-center gap-2.5">
-            {/* Chat Now Button */}
+            {/* AI Booking CTA */}
             <Button
               onClick={scrollToAssistant}
               className="hidden md:inline-flex rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-400 hover:to-red-500 shadow-lg shadow-red-500/20 font-semibold text-[13px] h-10 px-5"
             >
               <Sparkles className="w-4 h-4 mr-2" />
-              Chat Now
+              AI Assistant
             </Button>
 
             {/* Mobile Menu */}
@@ -183,7 +183,7 @@ export function Header() {
                       size="lg"
                     >
                       <Sparkles className="w-4 h-4 mr-2" />
-                      Chat with AI Assistant
+                      Book Free Consultation
                     </Button>
                   </div>
                 </div>

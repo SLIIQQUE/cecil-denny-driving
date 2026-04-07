@@ -1,11 +1,10 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { CTASection } from "@/components/sections/CTASection";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { BlogSection } from "@/components/sections/BlogSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { AreasSection } from "@/components/sections/AreasSection";
-import { BlogSection } from "@/components/sections/BlogSection";
-import { CTASection } from "@/components/sections/CTASection";
 
 export default function HomePage() {
   return (
@@ -15,7 +14,6 @@ export default function HomePage() {
         <HeroSection />
         <ServicesSection />
         <TestimonialsSection />
-        <AreasSection />
         <BlogSection />
         <CTASection />
       </main>
