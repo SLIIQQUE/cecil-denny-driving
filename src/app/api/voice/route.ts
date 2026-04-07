@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { VOICE_PROMPT, VOICE_TOOLS } from "@/lib/voice-prompt";
+import { VOICE_PROMPT } from "@/lib/voice-prompt";
 import { VoiceMessage } from "@/types/voice";
 
 export const runtime = "edge";
@@ -40,8 +40,6 @@ export async function POST(request: NextRequest) {
         body: JSON.stringify({
           model: "llama-3.3-70b-versatile",
           messages: formattedMessages,
-          tools: VOICE_TOOLS,
-          tool_choice: "auto",
           temperature: 0.7,
           max_tokens: 500,
         }),
@@ -61,8 +59,7 @@ export async function POST(request: NextRequest) {
     const assistantMessage = data.choices[0]?.message;
 
     return NextResponse.json({
-      content: assistantMessage.content || "",
-      toolCalls: assistantMessage.tool_calls || [],
+      content: assistantMessage?.content || "",
     });
   } catch (error) {
     console.error("Voice API error:", error);

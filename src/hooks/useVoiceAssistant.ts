@@ -45,40 +45,7 @@ export function useVoiceAssistant(): UseVoiceAssistantReturn {
 
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const synthRef = useRef<SpeechSynthesis | null>(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const SpeechRecognitionAPI = (window as unknown as { SpeechRecognition?: new () => SpeechRecognition; webkitSpeechRecognition?: new () => SpeechRecognition }).SpeechRecognition || (window as unknown as { webkitSpeechRecognition?: new () => SpeechRecognition }).webkitSpeechRecognition;
-      if (SpeechRecognitionAPI) {
-        recognitionRef.current = new SpeechRecognitionAPI();
-        recognitionRef.current.continuous = false;
-        recognitionRef.current.interimResults = false;
-        recognitionRef.current.lang = "en-GB";
-
-        recognitionRef.current.onresult = (event: SpeechRecognitionEvent) => {
-          const transcript = event.results[0][0].transcript;
-          handleUserMessage(transcript);
-        };
-
-        recognitionRef.current.onerror = (event: SpeechRecognitionErrorEvent) => {
-          console.error("Speech recognition error:", event.error);
-          setError(`Speech error: ${event.error}`);
-          setIsListening(false);
-        };
-
-        recognitionRef.current.onend = () => {
-          setIsListening(false);
-        };
-      }
-
-      synthRef.current = window.speechSynthesis;
-    }
-
-    return () => {
-      recognitionRef.current?.abort();
-      synthRef.current?.cancel();
-    };
-  }, []);
+  const messagesRef = useRef<VoiceMessage[]>([]);
 
   const speak = useCallback((text: string) => {
     if (!synthRef.current) return;
@@ -98,7 +65,8 @@ export function useVoiceAssistant(): UseVoiceAssistantReturn {
 
   const handleUserMessage = useCallback(async (content: string) => {
     const userMessage: VoiceMessage = { role: "user", content };
-    setMessages((prev) => [...prev, userMessage]);
+    messagesRef.current = [...messagesRef.current, userMessage];
+    setMessages([...messagesRef.current]);
     setIsLoading(true);
     setError(null);
 
@@ -107,7 +75,7 @@ export function useVoiceAssistant(): UseVoiceAssistantReturn {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: [...messages, userMessage],
+          messages: messagesRef.current,
         }),
       });
 
@@ -123,7 +91,8 @@ export function useVoiceAssistant(): UseVoiceAssistantReturn {
         content: assistantContent,
       };
 
-      setMessages((prev) => [...prev, assistantMessage]);
+      messagesRef.current = [...messagesRef.current, assistantMessage];
+      setMessages([...messagesRef.current]);
       speak(assistantContent);
     } catch (err) {
       setError("Sorry, I'm having trouble connecting. Please try again.");
@@ -131,7 +100,42 @@ export function useVoiceAssistant(): UseVoiceAssistantReturn {
     } finally {
       setIsLoading(false);
     }
-  }, [messages, speak]);
+  }, [speak]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const SpeechRecognitionAPI = (window as unknown as { SpeechRecognition?: new () => SpeechRecognition; webkitSpeechRecognition?: new () => SpeechRecognition }).SpeechRecognition || (window as unknown as { webkitSpeechRecognition?: new () => SpeechRecognition }).webkitSpeechRecognition;
+    
+    if (SpeechRecognitionAPI) {
+      recognitionRef.current = new SpeechRecognitionAPI();
+      recognitionRef.current.continuous = false;
+      recognitionRef.current.interimResults = false;
+      recognitionRef.current.lang = "en-GB";
+
+      recognitionRef.current.onresult = (event: SpeechRecognitionEvent) => {
+        const transcript = event.results[0][0].transcript;
+        handleUserMessage(transcript);
+      };
+
+      recognitionRef.current.onerror = (event: SpeechRecognitionErrorEvent) => {
+        console.error("Speech recognition error:", event.error);
+        setError(`Speech error: ${event.error}`);
+        setIsListening(false);
+      };
+
+      recognitionRef.current.onend = () => {
+        setIsListening(false);
+      };
+    }
+
+    synthRef.current = window.speechSynthesis;
+
+    return () => {
+      recognitionRef.current?.abort();
+      synthRef.current?.cancel();
+    };
+  }, [handleUserMessage]);
 
   const startListening = useCallback(() => {
     if (recognitionRef.current && !isListening) {
@@ -152,6 +156,7 @@ export function useVoiceAssistant(): UseVoiceAssistantReturn {
   }, [handleUserMessage]);
 
   const clearMessages = useCallback(() => {
+    messagesRef.current = [];
     setMessages([]);
     synthRef.current?.cancel();
   }, []);
