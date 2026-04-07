@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cecil Denny Driving School Website
+
+Professional driving lessons website for Cecil Denny, serving West London (W3, W4, W5, W6, W12, W13 postcodes).
+
+## Features
+
+- Modern, responsive design with Syne + DM Sans typography
+- Deep navy + warm amber colour palette
+- Scroll-triggered animations using Framer Motion
+- SEO optimized with JSON-LD schema
+- Sitemap and robots.txt
+- Mobile-first responsive design
+
+## Pages
+
+- **Home** (`/`) - Hero, services overview, testimonials, areas covered
+- **About** (`/about`) - Instructor background, stats, why choose us
+- **Services** (`/services`) - Driving lessons and packages
+- **Areas** (`/areas`) - Coverage map for West London
+- **FAQ** (`/faq`) - Common questions answered
+- **Testimonials** (`/testimonials`) - Learner reviews
+- **Contact** (`/contact`) - Contact form and information
+- **Privacy** (`/privacy`) - Privacy policy
+- **Terms** (`/terms`) - Terms of service
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 16 (App Router)
+- Tailwind CSS v4
+- shadcn/ui
+- Framer Motion
+- Lucide Icons
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contact
 
-## Learn More
+- Phone: 020 8743 5687
+- Email: info@cecildennydriving.co.uk
+- Location: Acton, London W3
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built by [SLIIQQUE](https://sliiqque.space) - Web3 & SaaS Software Studio
